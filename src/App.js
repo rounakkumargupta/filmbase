@@ -1,66 +1,9 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-
-import MovieCard from "./movieCard";
-import SearchIcon from "./search.svg";
-import "./main.css";
-
-const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
-
-const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    searchMovies("Batman");
-  }, []);
-
-  const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
-
-    setMovies(data.Search);
-  };
-
-  return (
-    <div className="app">
-      <h1>MovieLand</h1>
-
-      <div className="search">
-        <input
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for movies"
-        />
-        <img
-          src={SearchIcon}
-          alt="search"
-          onClick={() => searchMovies(searchTerm)}
-        />
-      </div>
-
-      {movies?.length > 0 ? (
-        <div className="container">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} />
-          ))}
-        </div>
-      ) : (
-        <div className="empty">
-          <h2>No movies found</h2>
-        </div>
-      )}
-    </div>
-  );
-};
-=======
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import MovieCard from "./movieCard.jsx";
 import './app.css';
 import SearchIcon from './search.svg';
-// 11e0eaaf
 
-const API_URL = "https://www.omdbapi.com/?apikey=11e0eaaf"
+const API_URL = "https://www.omdbapi.com/?apikey=11e0eaaf";
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -70,27 +13,35 @@ const App = () => {
         const response = await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
 
-        setMovies(data.Search)
-    }
+        setMovies(data.Search);
+    };
 
     useEffect(() => {
         searchMovies('batman');
     }, []);
 
-    return(
+    return (
         <div className="app">
             <h1>FilmBase</h1>
 
             <div className="search">
-                <input placeholder="Search any movie..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
-                <img src={SearchIcon} alt="Search" onClick={() => searchMovies(searchTerm)}/>
+                <input
+                    placeholder="Search any movie..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <img
+                    src={SearchIcon}
+                    alt="Search"
+                    onClick={() => searchMovies(searchTerm)}
+                />
             </div>
             {
                 movies?.length > 0
                 ? (
                     <div className="container">
                         {
-                            movies.map((movie) => (<MovieCard movie={movie}/>))
+                            movies.map((movie) => (<MovieCard movie={movie} />))
                         }
                     </div>
                 ) : (
@@ -104,9 +55,7 @@ const App = () => {
                 <p>Created by Rounak</p>
             </div>
         </div>
-        
     );
-}
->>>>>>> 39419c5 (initial commit for filmbase)
+};
 
 export default App;
