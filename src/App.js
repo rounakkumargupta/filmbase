@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MovieCard from "./movieCard.jsx";
-import './app.css';
+import './App.css';
 import SearchIcon from './search.svg';
 
 const API_URL = "https://www.omdbapi.com/?apikey=11e0eaaf";
@@ -29,6 +29,7 @@ const App = () => {
                     placeholder="Search any movie..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={(e) => {if (e.key === 'Enter') {searchMovies(searchTerm)}}}
                 />
                 <img
                     src={SearchIcon}
@@ -41,7 +42,9 @@ const App = () => {
                 ? (
                     <div className="container">
                         {
-                            movies.map((movie) => (<MovieCard movie={movie} />))
+                            movies.map((movie) => (
+                                <MovieCard key={movie.imdbID || movie.Title} movie={movie} />
+                            ))
                         }
                     </div>
                 ) : (
@@ -55,7 +58,7 @@ const App = () => {
                 <p>Created by Rounak</p>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default App;
