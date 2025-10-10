@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/filmbase/static/css/main.1497a722.css",
-    "main.js": "/filmbase/static/js/main.0108c6f4.js",
+    "main.css": "/filmbase/static/css/main.0a6ada0a.css",
+    "main.js": "/filmbase/static/js/main.f37e4076.js",
     "index.html": "/filmbase/index.html",
     "static/media/search.svg": "/filmbase/static/media/search.c6f7ed8f4e769a2199c691452b8566d8.svg",
-    "main.1497a722.css.map": "/filmbase/static/css/main.1497a722.css.map",
-    "main.0108c6f4.js.map": "/filmbase/static/js/main.0108c6f4.js.map"
+    "main.0a6ada0a.css.map": "/filmbase/static/css/main.0a6ada0a.css.map",
+    "main.f37e4076.js.map": "/filmbase/static/js/main.f37e4076.js.map"
   },
   "entrypoints": [
-    "static/css/main.1497a722.css",
-    "static/js/main.0108c6f4.js"
+    "static/css/main.0a6ada0a.css",
+    "static/js/main.f37e4076.js"
   ]
 }
